@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+		"-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry location="/Users/shengchenglong/.m2My/repository/mysql/mysql-connector-java/5.1.25/mysql-connector-java-5.1.25.jar" />
+	<classPathEntry location="./target/classes" />
+	<context id="xplat-bd" defaultModelType="flat">
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+			<property name="suppressJavaInterface" value="false" />
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/shiro"
+			userId="root" password="root" />
+		<javaModelGenerator targetPackage="com.scl.manage.domain" targetProject="/Users/shengchenglong/Documents/mybatisGenerator/">
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.scl.manage.mapper" targetProject="/Users/shengchenglong/Documents/mybatisGenerator/" />
+		<javaClientGenerator targetPackage="com.scl.manage.mapper" targetProject="/Users/shengchenglong/Documents/mybatisGenerator/" type="XMLMAPPER">
+		   <!--  <property name="rootInterface" value="com.ouyeel.xplat.data.mapper.XMapper" /> -->
+		</javaClientGenerator>
+		
+ 		<table tableName="sys_organization" domainObjectName="SysOrganization" alias="tb"
+		    enableCountByExample="false" 
+		    enableSelectByExample="false" 
+		    enableUpdateByExample="false" 
+		    enableDeleteByExample="false">
+		</table>
+		
+		 <table tableName="sys_resource" domainObjectName="SysResource" alias="tb"
+		    enableCountByExample="false" 
+		    enableSelectByExample="false" 
+		    enableUpdateByExample="false" 
+		    enableDeleteByExample="false">
+		</table>
+		
+		<table tableName="sys_role" domainObjectName="SysRole" alias="tb"
+		    enableCountByExample="false" 
+		    enableSelectByExample="false" 
+		    enableUpdateByExample="false" 
+		    enableDeleteByExample="false">
+		</table>
+		
+		 <table tableName="sys_user" domainObjectName="SysUser" alias="tb"
+		    enableCountByExample="false" 
+		    enableSelectByExample="false" 
+		    enableUpdateByExample="false" 
+		    enableDeleteByExample="false">
+		</table>
+
+	</context>
+</generatorConfiguration>

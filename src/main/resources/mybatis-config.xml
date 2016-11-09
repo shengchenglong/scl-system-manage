@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="SysOrganization" type="com.scl.manage.domain.SysOrganization" />
+		<typeAlias alias="SysResource" type="com.scl.manage.domain.SysResource" />
+		<typeAlias alias="SysRole" type="com.scl.manage.domain.SysRole" />
+		<typeAlias alias="SysUser" type="com.scl.manage.domain.SysUser" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/scl/manage/mapper/SysOrganizationMapper.xml" />
+		<mapper resource="com/scl/manage/mapper/SysResourceMapper.xml" />
+		<mapper resource="com/scl/manage/mapper/SysRoleMapper.xml" />
+		<mapper resource="com/scl/manage/mapper/SysUserMapper.xml" />
+	</mappers>
+
+</configuration>
