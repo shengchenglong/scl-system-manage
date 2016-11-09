@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.scl.manage.mapper.SysOrganizationMapper" >
+  <resultMap id="BaseResultMap" type="com.scl.manage.domain.SysOrganization" >
+    <id column="tb_id" property="id" jdbcType="VARCHAR" />
+    <result column="tb_code" property="code" jdbcType="VARCHAR" />
+    <result column="tb_name" property="name" jdbcType="VARCHAR" />
+    <result column="tb_priority" property="priority" jdbcType="INTEGER" />
+    <result column="tb_parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="tb_parent_codes" property="parentCodes" jdbcType="VARCHAR" />
+    <result column="tb_status" property="status" jdbcType="INTEGER" />
+    <result column="tb_is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="tb_create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="tb_create_time" property="createTime" jdbcType="DATE" />
+    <result column="tb_update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="tb_update_time" property="updateTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    tb.id as tb_id, tb.code as tb_code, tb.name as tb_name, tb.priority as tb_priority, 
+    tb.parent_code as tb_parent_code, tb.parent_codes as tb_parent_codes, tb.status as tb_status, 
+    tb.is_delete as tb_is_delete, tb.create_by as tb_create_by, tb.create_time as tb_create_time, 
+    tb.update_by as tb_update_by, tb.update_time as tb_update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_organization tb
+    where tb.id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_organization
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.scl.manage.domain.SysOrganization" >
+    insert into sys_organization (id, code, name, 
+      priority, parent_code, parent_codes, 
+      status, is_delete, create_by, 
+      create_time, update_by, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{priority,jdbcType=INTEGER}, #{parentCode,jdbcType=VARCHAR}, #{parentCodes,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.scl.manage.domain.SysOrganization" >
+    insert into sys_organization
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="priority != null" >
+        priority,
+      </if>
+      <if test="parentCode != null" >
+        parent_code,
+      </if>
+      <if test="parentCodes != null" >
+        parent_codes,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="parentCode != null" >
+        #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCodes != null" >
+        #{parentCodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scl.manage.domain.SysOrganization" >
+    update sys_organization
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        priority = #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="parentCode != null" >
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCodes != null" >
+        parent_codes = #{parentCodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scl.manage.domain.SysOrganization" >
+    update sys_organization
+    set code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      priority = #{priority,jdbcType=INTEGER},
+      parent_code = #{parentCode,jdbcType=VARCHAR},
+      parent_codes = #{parentCodes,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

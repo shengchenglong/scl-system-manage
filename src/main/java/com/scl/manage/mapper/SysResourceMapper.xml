@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.scl.manage.mapper.SysResourceMapper" >
+  <resultMap id="BaseResultMap" type="com.scl.manage.domain.SysResource" >
+    <id column="tb_id" property="id" jdbcType="VARCHAR" />
+    <result column="tb_name" property="name" jdbcType="VARCHAR" />
+    <result column="tb_code" property="code" jdbcType="VARCHAR" />
+    <result column="tb_priority" property="priority" jdbcType="INTEGER" />
+    <result column="tb_type" property="type" jdbcType="VARCHAR" />
+    <result column="tb_url" property="url" jdbcType="VARCHAR" />
+    <result column="tb_permission" property="permission" jdbcType="VARCHAR" />
+    <result column="tb_parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="tb_parent_codes" property="parentCodes" jdbcType="VARCHAR" />
+    <result column="tb_status" property="status" jdbcType="INTEGER" />
+    <result column="tb_is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="tb_create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="tb_create_time" property="createTime" jdbcType="DATE" />
+    <result column="tb_update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="tb_update_time" property="updateTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    tb.id as tb_id, tb.name as tb_name, tb.code as tb_code, tb.priority as tb_priority, 
+    tb.type as tb_type, tb.url as tb_url, tb.permission as tb_permission, tb.parent_code as tb_parent_code, 
+    tb.parent_codes as tb_parent_codes, tb.status as tb_status, tb.is_delete as tb_is_delete, 
+    tb.create_by as tb_create_by, tb.create_time as tb_create_time, tb.update_by as tb_update_by, 
+    tb.update_time as tb_update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_resource tb
+    where tb.id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_resource
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.scl.manage.domain.SysResource" >
+    insert into sys_resource (id, name, code, 
+      priority, type, url, 
+      permission, parent_code, parent_codes, 
+      status, is_delete, create_by, 
+      create_time, update_by, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{priority,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{permission,jdbcType=VARCHAR}, #{parentCode,jdbcType=VARCHAR}, #{parentCodes,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{createBy,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.scl.manage.domain.SysResource" >
+    insert into sys_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="priority != null" >
+        priority,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="permission != null" >
+        permission,
+      </if>
+      <if test="parentCode != null" >
+        parent_code,
+      </if>
+      <if test="parentCodes != null" >
+        parent_codes,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permission != null" >
+        #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCode != null" >
+        #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCodes != null" >
+        #{parentCodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scl.manage.domain.SysResource" >
+    update sys_resource
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null" >
+        priority = #{priority,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permission != null" >
+        permission = #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCode != null" >
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCodes != null" >
+        parent_codes = #{parentCodes,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scl.manage.domain.SysResource" >
+    update sys_resource
+    set name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      priority = #{priority,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      permission = #{permission,jdbcType=VARCHAR},
+      parent_code = #{parentCode,jdbcType=VARCHAR},
+      parent_codes = #{parentCodes,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="getByRoles" parameterType="java.util.List" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List" />
+    from sys_resource tb
+    left join sys_role_resource rr on rr.resource_id = tb.id
+    where rr.role_id in 
+    <!-- 这里不能手写（），必须用属性open 和 close 来指定 -->
+    <foreach item="item" index="index" collection="list" open="(" separator="," close=")">  
+  		#{item.id}  
+ 	</foreach> 
+  </select>
+  
+  <select id="getAll" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List" />
+    from sys_resource tb
+  </select>
+  
+<!--   <select id="getByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/>
+	from sys_resource tb
+	right join sys_role_resource srr on srr.resource_id = tb.id
+	right join sys_role srole on srr.role_id = srole.id
+	right join sys_user_role sur on sur.role_id = srole.id
+	right join sys_user su on su.username = #{username, jdbcType=VARCHAR};
+  </select> -->
+</mapper>
