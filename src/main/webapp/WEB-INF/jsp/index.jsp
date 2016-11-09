@@ -191,7 +191,7 @@
           <li>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <img src="images/photos/loggeduser.png" alt="" />
+                <img src="${ctx }/static/bracket/images/photos/loggeduser.png" alt="" />
                 John Doe
                 <span class="caret"></span>
               </button>
@@ -295,7 +295,7 @@
               <div class="stat">
                 <div class="row">
                   <div class="col-xs-4">
-                    <img src="images/is-document.png" alt="" />
+                    <img src="${ctx }/static/bracket/images/is-document.png" alt="" />
                   </div>
                   <div class="col-xs-8">
                     <small class="stat-label">Page Views</small>

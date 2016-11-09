@@ -9,9 +9,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon" href="${ctx }/static/bracket/cimages/favicon.png" type="image/png">
+<link rel="shortcut icon" href="${ctx }/static/bracket/images/favicon.png" type="image/png">
 <link href="${ctx }/static/bracket/css/style.default.css" rel="stylesheet">
-<title>后台管理:<sitemesh:write property='title' /></title>
+
+<script src="${ctx }/static/bracket/js/jquery-1.11.1.min.js"></script>
+<script src="${ctx }/static/bracket/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="${ctx }/static/bracket/js/jquery-ui-1.10.3.min.js"></script>
+<script src="${ctx }/static/bracket/js/bootstrap.min.js"></script>
+<script src="${ctx }/static/bracket/js/modernizr.min.js"></script>
+<script src="${ctx }/static/bracket/js/jquery.sparkline.min.js"></script>
+<script src="${ctx }/static/bracket/js/toggles.min.js"></script>
+<script src="${ctx }/static/bracket/js/retina.min.js"></script>
+<script src="${ctx }/static/bracket/js/jquery.cookies.js"></script>
+
+<script src="${ctx }/static/bracket/js/flot/jquery.flot.min.js"></script>
+<script src="${ctx }/static/bracket/js/flot/jquery.flot.resize.min.js"></script>
+<script src="${ctx }/static/bracket/js/flot/jquery.flot.spline.min.js"></script>
+<script src="${ctx }/static/bracket/js/morris.min.js"></script>
+<script src="${ctx }/static/bracket/js/raphael-2.1.0.min.js"></script>
+
+<script src="${ctx }/static/bracket/js/custom.js"></script>
+<script src="${ctx }/static/bracket/js/dashboard.js"></script>
+<title>后台管理:<!-- <sitemesh:write property='title' /> --></title>
 </head>
 <body>
 
@@ -92,23 +111,5 @@
 	<sitemesh:write property='body' />
 </section>
 
-<script src="${ctx }/static/bracket/js/jquery-1.11.1.min.js"></script>
-<script src="${ctx }/static/bracket/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="${ctx }/static/bracket/js/jquery-ui-1.10.3.min.js"></script>
-<script src="${ctx }/static/bracket/js/bootstrap.min.js"></script>
-<script src="${ctx }/static/bracket/js/modernizr.min.js"></script>
-<script src="${ctx }/static/bracket/js/jquery.sparkline.min.js"></script>
-<script src="${ctx }/static/bracket/js/toggles.min.js"></script>
-<script src="${ctx }/static/bracket/js/retina.min.js"></script>
-<script src="${ctx }/static/bracket/js/jquery.cookies.js"></script>
-
-<script src="${ctx }/static/bracket/js/flot/jquery.flot.min.js"></script>
-<script src="${ctx }/static/bracket/js/flot/jquery.flot.resize.min.js"></script>
-<script src="${ctx }/static/bracket/js/flot/jquery.flot.spline.min.js"></script>
-<script src="${ctx }/static/bracket/js/morris.min.js"></script>
-<script src="${ctx }/static/bracket/js/raphael-2.1.0.min.js"></script>
-
-<script src="${ctx }/static/bracket/js/custom.js"></script>
-<script src="${ctx }/static/bracket/js/dashboard.js"></script>
 </body>
 </html>

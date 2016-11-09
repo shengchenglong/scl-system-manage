@@ -144,13 +144,13 @@
 				<!-- /login 向表单过滤器发出请求，去验证登录授权信息 -->
 				/manage/login = authc
 				<!-- 退出拦截器,主要属性:redirectUrl:退出成功后重定向的地址(默认是/) -->
-				<!-- /manage/logout = logout
-				/authenticated = authc -->
+				/manage/logout = logout
+				/authenticated = authc
 				<!-- 下面这句话user使用了UserFilter这一个拦截器用于用户拦截，
 				使任何访问/manage/** 都需要登录(即，会访问ShiroFilterFactoryBean的loginUrl属性值的url)
 				注意URL Pattern里用到的是两颗星,这样才能实现任意层次的全匹配 -->
 				<!-- 不要拦截/**，那样的话静态资源不能放出来 -->
-				<!-- /manage/** = user,sysUser -->
+				/manage/** = user,sysUser
 				<!-- /static/** = anon -->
 			</value>
 		</property>

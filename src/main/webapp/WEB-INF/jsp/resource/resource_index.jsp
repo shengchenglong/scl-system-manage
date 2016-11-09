@@ -1,25 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="${ctx }/static/bracket/images/favicon.png" type="image/png">
-<title></title>
-<%-- <link rel="stylesheet" href="${ctx}/static/css/css.css"/> --%>
-<link rel="stylesheet" href="${ctx}/static/jquery-treetable/stylesheets/jquery.treetable.theme.default.css"/>
-<link rel="stylesheet" href="${ctx}/static/jquery-treetable/stylesheets/jquery.treetable.css"/>
-  <link href="${ctx }/static/bracket/css/style.default.css" rel="stylesheet">
-  <link href="${ctx }/static/bracket/css/jquery.datatables.css" rel="stylesheet">
-</head>
-<script src="${ctx}/static/js/jquery-1.11.0.min.js"></script>
-<script src="${ctx}/static/jquery-treetable/javascripts/src/jquery.treetable.js"/></script>
+	<title></title>
 <body>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 	<c:if test="${not empty msg}">
 		<div class="message">${msg}</div>
 	</c:if>
